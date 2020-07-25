@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{css/main.css}" href="newUser.css"/>
+    <meta charset="UTF-8">
+    <title>Profile page</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <table>
+        <tr>
+            <td class="title">Full Name</td>
+            <td th:text="|Putting some text in here: ${profile.title} ${profile.firstName} ${profile.surname}|">Miss Jane Green</td>
+        </tr>
+        <tr>
+            <td class="title">Date of Birth</td>
+            <td th:text="${#dates.format(profile.dateOfBirth,'dd-MMM-yyyy')}">17-JAN-1946</td>
+        </tr>
+        <tr>
+            <td class="title">Description</td>
+            <td th:utext="${profile.description}">Description goes here</td>
+        </tr>
+    </table>
+</body>
+</html>
